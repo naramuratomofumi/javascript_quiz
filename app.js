@@ -67,17 +67,19 @@ let quizIndex = 0;
 const $button = document.getElementsByTagName('button')  //HTMLの要素を変数として取るときには【$】を使ってあげるとわかりやすい
 // 問題文、選択肢を定義
 const setupQuiz = () => {
-  document.getElementById('js-question').textContent = question;
+  document.getElementById('js-question').textContent = quiz[quizIndex].question;
   let buttonIndex = 0;
   let buttonLength = $button.length;
   while(buttonIndex < buttonLength){
-    $button[buttonIndex].textContent = answers[buttonIndex];
+    $button[buttonIndex].textContent = quiz[quizIndex].answers[buttonIndex];
     buttonIndex++;
   };
 };
 
+setupQuiz();
+
 const clickHandler = (e) => {
-  if (correct === e.target.textContent){
+  if (quiz[quizIndex].correct === e.target.textContent){
     window.alert('正解！');
   } 
   else {
@@ -86,13 +88,11 @@ const clickHandler = (e) => {
 
   quizIndex++;
 
-  if(quizIndex < quizLength)
-  {
+  if (quizIndex < quizLength){
   setupQuiz();
   }
-  else
-  {
-  window.alert('終了！！！')
+  else {
+  window.alert('終了！！！');
   }
 
 };

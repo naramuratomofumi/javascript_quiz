@@ -7,16 +7,19 @@ const answers = [
 ];
 const correct = '落とした時点でアウト';
 
-document.getElementById('js-question').textContent = question;
-
 const $button = document.getElementsByTagName('button')  //HTMLの要素を変数として取るときには【$】を使ってあげるとわかりやすい
+// 問題文、選択肢を定義
+const setupQuiz = () => {
+  document.getElementById('js-question').textContent = question;
+  let buttonIndex = 0;
+  let buttonLength = $button.length;
+  while(buttonIndex < buttonLength){
+    $button[buttonIndex].textContent = answers[buttonIndex];
+    buttonIndex++;
+  };
+};
 
-let buttonIndex = 0;
-let buttonLength = $button.length;
-while(buttonIndex < buttonLength){
-  $button[buttonIndex].textContent = answers[buttonIndex];
-  buttonIndex++;
-}
+setupQuiz();
 
 $button[0].addEventListener('click', () => {
   if (correct === $button[0].textContent){

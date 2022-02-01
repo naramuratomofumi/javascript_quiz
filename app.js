@@ -11,10 +11,12 @@ document.getElementById('js-question').textContent = question;
 
 const $button = document.getElementsByTagName('button')  //HTMLの要素を変数として取るときには【$】を使ってあげるとわかりやすい
 
-$button[0].textContent = answers[0];
-$button[1].textContent = answers[1];
-$button[2].textContent = answers[2];
-$button[3].textContent = answers[3];
+let buttonIndex = 0;
+let buttonLength = $button.length;
+while(buttonIndex < buttonLength){
+  $button[buttonIndex].textContent = answers[buttonIndex];
+  buttonIndex++;
+}
 
 $button[0].addEventListener('click', () => {
   if (correct === $button[0].textContent){

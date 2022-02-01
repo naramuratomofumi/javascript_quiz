@@ -7,4 +7,4 @@ const answers = [
 ];
 const correct = '落とした時点でアウト';
 
-console.log(document.getElementById('js-question'))
+console.log(document.getElementById('js-question').textContent = question)

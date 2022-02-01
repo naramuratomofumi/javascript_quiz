@@ -5,5 +5,5 @@ const answers = [
   '10秒',
   '落とした時点でアウト'
 ];
-
+const correct = '落とした時点でアウト';
 

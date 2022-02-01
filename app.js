@@ -62,6 +62,7 @@ const quiz = [
 ];
 
 const quizLength = quiz.length;
+let quizIndex = 0;
 
 const $button = document.getElementsByTagName('button')  //HTMLの要素を変数として取るときには【$】を使ってあげるとわかりやすい
 // 問題文、選択肢を定義
